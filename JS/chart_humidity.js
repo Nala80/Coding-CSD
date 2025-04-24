@@ -1,26 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Humidity Chart</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="chart.css">
-</head>
-<body>
-    <header>
-        <nav style="margin-left:200px">
-            <button><a href="chart_temperature.html">Temperatuur</a></button>
-            <button><a href="chart_humidity.html">Luchtvochtigheid</a></button>
-            <button><a href="dashboard.html">Dashboard</a></button>
-        </nav>
-    </header>
-  <div style="width: 80%; margin: 50px auto;">
-    <h1>Luchtvochtigheid</h1>
-    <canvas id="humidityChart"></canvas>
-  </div>
-  <script>
-
 const apiUrl = "https://x8ki-letl-twmt.n7.xano.io/api:_PE0roiD/meter2vocht";
 
 // Functie om data op te halen
@@ -108,10 +85,3 @@ async function createChart() {
 
 // Start het proces
 createChart();
-
-  </script>
-    <div>
-        <p>Dikke SO naar Richard de Vries, wat een legend! 2025 ©</p>
-    </div>
-</body>
-</html>

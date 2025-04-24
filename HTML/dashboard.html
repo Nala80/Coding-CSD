@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Thermometer</title>
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <script src="../JS/dashboard.js"></script>
+  </head>
+  <body>
+    <header>
+        <nav>
+            <button><a href="chart_temperature.html">Temperatuur</a></button>
+            <button><a href="chart_humidity.html">Luchtvochtigheid</a></button>
+            <button><a href="dashboard.html">Dashboard</a></button>
+        </nav>
+    </header>
+    <h1>Live Thermometer</h1>
+    <div class="grid">
+      <div class="box">Buitentemp: <span id="buiten">N/A</span>°C</div>
+      <div class="box">Binnentemp: <span id="binnen">N/A</span></div>
+      <div class="box">Sensor Buiten: <span id="sb">N/A</span></div>
+      <div class="box">Middensensor: <span id="ms">N/A</span></div>
+      <div class="box">Binnensensor: <span id="bs">N/A</span></div>
+      <div class="box">Luchtvocht: <span id="lv">N/A</span></div>
+      <div class="box">Zonlicht: <span id="zl">N/A</span> lux</div>
+    </div>
+
+  </body>
+</html>

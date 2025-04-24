@@ -1,25 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Temperature Chart</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="chart.css">
-</head>
-<body>
-    <header>
-        <nav style="margin-left:200px">
-            <button><a href="chart_temperature.html">Temperatuur</a></button>
-            <button><a href="chart_humidity.html">Luchtvochtigheid</a></button>
-            <button><a href="dashboard.html">Dashboard</a></button>
-        </nav>
-    </header>
-  <div style="width: 80%; margin: 50px auto;">
-    <h1>Temperatuur</h1>
-    <canvas id="temperatureChart"></canvas>
-  </div>
-  <script>
 
 const apiUrl = "https://x8ki-letl-twmt.n7.xano.io/api:_PE0roiD/meter1warmte";
 // Api voor buitentemperatuur door knmi gemeten
@@ -41,7 +19,7 @@ async function fetchData() {
 
 // Functie om data te extraheren en de grafiek te maken
 async function createChart() {
-    const data = await fetchData(); 
+    const data = await fetchData();
 
     // Controleer of data bestaat
     if (!data) return;
@@ -50,9 +28,9 @@ async function createChart() {
     const timestamps = data.filter(entry => entry["Time"] !== "0:0:0").filter(entry => entry["Time"] !== "Time").map(entry => entry["Time"]); // Tijdstempels
     // const datestamps = data.map(entry => entry["Date"]);
     const temperature1 = data.map(entry => parseFloat(entry["Sensor_1"].split(":")[0]));
-    const temperature2 = data.map(entry => parseFloat(entry["Sensor_2"].split(":")[0])); 
-    const temperature3 = data.map(entry => parseFloat(entry["Sensor_3"].split(":")[0])); 
-    
+    const temperature2 = data.map(entry => parseFloat(entry["Sensor_2"].split(":")[0]));
+    const temperature3 = data.map(entry => parseFloat(entry["Sensor_3"].split(":")[0]));
+
     // Maak de grafiek
     const ctx = document.getElementById("temperatureChart").getContext("2d");
     new Chart(ctx, {
@@ -111,7 +89,7 @@ async function createChart() {
                     },
                     beginAtZero: false,
                     suggestedMin: 5,
-                    suggestedMax: 20  
+                    suggestedMax: 20
                 }
             }
         }
@@ -120,10 +98,3 @@ async function createChart() {
 
 // Start het proces
 createChart();
-
-  </script>
-  <div>
-    <p>Dikke SO naar Richard de Vries, wat een legend! 2025©</p>
-  </div>
-</body>
-</html>

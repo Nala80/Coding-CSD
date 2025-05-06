@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Blueprint</title>
+    <link rel="stylesheet" href="dashboard1.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400&display=swap" rel="stylesheet">
+    <script src="chart.umd.js"></script>
+    <script src="sensor_dashboard.js"></script>
+</head>
+<body data-sensor="Sensor4">
+<div class="container">
+    <button class="load-btn" type="button" aria-label="Reload">
+        <img src="photos/reload.png" alt="Reload" class="reload-icon" />
+    </button>
+    <div class="top-right-buttons">
+        <button onclick="location.href='dashboard1.html'" class="stro-btn">Stro</button>
+        <button onclick="location.href='dashboard2.html'" class="stro-btn">Stro</button>
+        <button onclick="location.href='dashboard3.html'" class="stro-btn">Stro</button>
+        <button onclick="location.href='dashboard4.html'" class="stro-btn">Stro</button>
+    </div>
+    <div class="section section1">
+        <header>
+            <h1>Stro (Sensor 4)</h1>
+            <p class="intro-text">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </p>
+        </header>
+    </div>
+    <div class="section section2">
+        <div class="sub-section sub1">
+            <canvas id="radarChart"></canvas>
+        </div>
+        <div class="sub-section sub2">
+            <div class="hex-grid">
+                <div class="hex-row even">
+                    <div class="hex"><div class="hex-content">Binnentemp<br><span id="buiten">N/A</span></div></div>
+                    <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum1">N/A</span></div></div>
+                    <div class="hex"><div class="hex-content">Buitensensor<br><span id="temp1">N/A</span></div></div>
+                    <div class="line-right-1"></div>
+                </div>
+                <div class="hex-row odd">
+                    <div class="hex"><div class="hex-content">Buitentemp<br><span id="ms">N/A</span></div></div>
+                    <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum2">N/A</span></div></div>
+                    <div class="hex"><div class="hex-content">Middensensor<br><span id="temp2">N/A</span></div></div>
+                    <div class="line-right-2"></div>
+                </div>
+                <div class="hex-row even2">
+                    <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum3">N/A</span></div></div>
+                    <div class="hex"><div class="hex-content">Binnensensor<br><span id="temp3">N/A</span></div></div>
+                    <div class="line-right-3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-section sub3">
+            <img src="photos/dak.png" alt="Diagram" />
+        </div>
+    </div>
+    <div class="section section3">
+        <div class="footer">
+            <div class="qr-section">
+                <img src="photos/qr.png" alt="QR Code" />
+                <div>
+                    <strong>PRODUCENT</strong><br>
+                    <a href="https://price-ce.nl/">https://price-ce.nl/</a>
+                </div>
+            </div>
+            <div class="logo-section">
+                <img src="photos/price_logo.png" alt="Price Logo" />
+                <img src="photos/matchmaker_logo.png" alt="Material Match Maker Logo" />
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    const ctx = document.getElementById('radarChart').getContext('2d');
+
+    const radarChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: [
+                "milieu-impact levensduur",
+                "CO₂-uitstoot tijdens productie",
+                "CO₂-opslag in materiaal",
+                "hergebruik, losmaakbaarheid",
+                "gezondheids-impact",
+                "geografische herkomst"
+            ],
+            datasets: [{
+                label: "Voorbeeldmateriaal",
+                data: [4, 3, 2, 5, 3, 4], // <--- DATA
+                backgroundColor: "rgba(33,32,62,0.6)",
+                borderColor: "rgba(100, 95, 45, 60)",
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: "rgba(54, 162, 235, 1)",
+                pointRadius: 0,
+                pointHoverRadius: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                r: {
+                    angleLines: { display: false },
+                    suggestedMin: 0,
+                    suggestedMax: 5,
+                    ticks: {
+                        display: false, // <--- GETALLEN LATEN ZIEN
+                        stepSize: 1,
+                        backdropColor: "transparent"
+                    },
+                    pointLabels: {
+                        font: {
+                            size: 16
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const btn = document.querySelector('.load-btn');
+        if (btn) {
+            btn.addEventListener('click', function () {
+                btn.classList.add('spin');
+                setTimeout(() => btn.classList.remove('spin'), 1000);
+            });
+        }
+    });
+</script>

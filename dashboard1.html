@@ -1,4 +1,4 @@
-she<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,21 +7,22 @@ she<!DOCTYPE html>
   <link rel="stylesheet" href="dashboard1.css" />
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400&display=swap" rel="stylesheet">
   <script src="chart.umd.js"></script>
+  <script src="sensor_dashboard.js"></script>
 </head>
-<body>
+<body data-sensor="Sensor1">
   <div class="container">
     <button class="load-btn" type="button" aria-label="Reload">
         <img src="photos/reload.png" alt="Reload" class="reload-icon" />
     </button>
     <div class="top-right-buttons">
-        <button class="stro-btn">Stro</button>
-        <button class="stro-btn">Stro</button>
-        <button class="stro-btn">Stro</button>
-        <button class="stro-btn">Stro</button>
+        <button onclick="location.href='dashboard1.html'" class="stro-btn">Stro</button>
+        <button onclick="location.href='dashboard2.html'" class="stro-btn">Stro</button>
+        <button onclick="location.href='dashboard3.html'" class="stro-btn">Stro</button>
+        <button onclick="location.href='dashboard4.html'" class="stro-btn">Stro</button>
     </div>
     <div class="section section1">
         <header>
-            <h1>Stro</h1>
+            <h1>Stro (Sensor 1)</h1>
             <p class="intro-text">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
@@ -37,19 +38,19 @@ she<!DOCTYPE html>
         <div class="hex-grid">
             <div class="hex-row even">
                 <div class="hex"><div class="hex-content">Binnentemp<br><span id="buiten">N/A</span></div></div>
-                <div class="hex"><div class="hex-content">Luchtvocht<br><span id="binnen">N/A</span></div></div>
-                <div class="hex"><div class="hex-content">Buitensensor<br><span id="lv">N/A</span></div></div>
+                <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum1">N/A</span></div></div>
+                <div class="hex"><div class="hex-content">Buitensensor<br><span id="temp1">N/A</span></div></div>
                 <div class="line-right-1"></div>
               </div>
               <div class="hex-row odd">
                 <div class="hex"><div class="hex-content">Buitentemp<br><span id="ms">N/A</span></div></div>
-                <div class="hex"><div class="hex-content">Luchtvocht<br><span id="bs">N/A</span></div></div>
-                <div class="hex"><div class="hex-content">Middensensor<br><span id="sb">N/A</span></div></div>
+                <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum2">N/A</span></div></div>
+                <div class="hex"><div class="hex-content">Middensensor<br><span id="temp2">N/A</span></div></div>
                 <div class="line-right-2"></div>
               </div>
               <div class="hex-row even2">
-                <div class="hex"><div class="hex-content">Luchtvocht<br><span id="lv">N/A</span></div></div>
-                <div class="hex"><div class="hex-content">Binnensensor<br><span id="lv">N/A</span></div></div>
+                <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum3">N/A</span></div></div>
+                <div class="hex"><div class="hex-content">Binnensensor<br><span id="temp3">N/A</span></div></div>
                 <div class="line-right-3"></div>
             </div>  
         </div>         

@@ -182,7 +182,7 @@
     flex-direction: column;
     gap: 0;
     align-items: center;
-    justify-content: top;
+    /*justify-content: top;*/
     overflow: visible;
   }
   

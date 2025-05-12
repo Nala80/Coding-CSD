@@ -44,7 +44,8 @@
     position: relative; 
 }
 
- /* .section1::after {
+ /*
+  .section1::after {
     content: '';
     display: block;
     position: absolute;
@@ -55,7 +56,8 @@
     height: 1.5px;
     background: black;
     z-index: 100;
-}*/
+}
+    */
 
   .section2 {
     display: grid;
@@ -310,7 +312,7 @@
 
   .top-right-buttons {
     position: absolute;
-    top: 18px;
+    top: 0px;
     right: 18px;
     display: flex;
     gap: 10px;
@@ -319,15 +321,92 @@
   
   .stro-btn {
     padding: 8px 18px;
-    background: #21203e;
     color: #fff;
-    border: none;
-    border-radius: 6px;
+    border: 1.5px solid #222; 
+    border-top: none;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
     font-size: 1em;
     cursor: pointer;
     transition: background 0.2s;
+    height: 80px;
+    width: 85px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
   
   .stro-btn:hover {
     background: #3a3970;
   }
+
+  .stro-btn .stro {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('photos/stro.jpg');
+    background-size: cover;
+    background-position: center;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    z-index: 0;
+}
+
+.stro-btn .cellulose {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('photos/cellulose.jpg');
+    background-size: cover;
+    background-position: center;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    z-index: 0;
+}
+
+.stro-btn .hemkor {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('photos/hemkor.png');
+    background-size: cover;
+    background-position: center;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    z-index: 0;
+}
+
+.stro-btn .isovlas {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('photos/isovlas.jpg');
+    background-size: cover;
+    background-position: center;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    z-index: 0;
+}
+
+.stro-btn {
+    color: #fff;
+    z-index: 1;
+}
+
+.stro-btn > *:not(.stro):not(.cellulose):not(.hemkor):not(.isovlas) {
+    position: relative;
+    z-index: 1;
+}
+
+.stro-btn .btn-label {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    pointer-events: none; 
+}
+
+.btn-label {
+    font-size: 1.3em;
+    font-weight: bolder;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}

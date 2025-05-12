@@ -9,82 +9,278 @@
   <script src="chart.umd.js"></script>
   <script src="sensor_dashboard.js"></script>
   <script src="weer_api.js"></script>
+  <style>
+    .dashboard-page { display: none; }
+    .dashboard-page.active { display: block; }
+  </style>
 </head>
 <body data-sensor="Sensor1">
   <div class="container">
     <button class="load-btn" type="button" aria-label="Reload">
-        <img src="photos/reload.png" alt="Reload" class="reload-icon" />
+      <img src="photos/reload.png" alt="Reload" class="reload-icon" />
     </button>
     <div class="top-right-buttons">
-        <button onclick="location.href='dashboard1.html'" class="stro-btn">Stro</button>
-        <button onclick="location.href='dashboard2.html'" class="stro-btn">Isovlas</button>
-        <button onclick="location.href='dashboard3.html'" class="stro-btn">Cellulose</button>
-        <button onclick="location.href='dashboard4.html'" class="stro-btn">Hemkor</button>
+      <button type="button" class="stro-btn" onclick="showPage('stro')">
+        <span class="stro"></span>
+        <span class="btn-label">Stro</span>
+      </button>
+      <button type="button" class="stro-btn" onclick="showPage('isovlas')">
+        <span class="isovlas"></span>
+        <span class="btn-label">Isovlas</span>
+      </button>
+      <button type="button" class="stro-btn" onclick="showPage('cellulose')">
+        <span class="cellulose"></span>
+        <span class="btn-label">Cellulose</span>
+      </button>
+      <button type="button" class="stro-btn" onclick="showPage('hemkor')">
+        <span class="hemkor"></span>
+        <span class="btn-label">Hemkor</span>
+      </button>
     </div>
-    <div class="section section1">
+
+    <!-- Stro Page -->
+    <div class="dashboard-page active" id="page-stro">
+      <div class="section section1">
         <header>
-            <h1>Stro (Sensor 1)</h1>
-            <p class="intro-text">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
+          <h1>Stro (Sensor 1)</h1>
+          <p class="intro-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          </p>
         </header>
-    </div>
-    <div class="section section2">
-      <div class="sub-section sub1">
-        <canvas id="radarChart"></canvas>
       </div>
-      <div class="sub-section sub2">
-        <div class="hex-grid">
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="radarChart-stro"></canvas>
+        </div>
+        <div class="sub-section sub2">
+          <div class="hex-grid">
             <div class="hex-row even">
-                <div class="hex"><div class="hex-content">Binnentemp<br><span id="binnen">N/A</span></div></div>
-                <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum1">N/A</span></div></div>
-                <div class="hex"><div class="hex-content">Buitensensor<br><span id="temp1">N/A</span></div></div>
-                <div class="line-right-1"></div>
-              </div>
-              <div class="hex-row odd">
-                <div class="hex"><div class="hex-content">Buitentemp<br><span id="buiten">N/A</span></div></div>
-                <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum2">N/A</span></div></div>
-                <div class="hex"><div class="hex-content">Middensensor<br><span id="temp2">N/A</span></div></div>
-                <div class="line-right-2"></div>
-              </div>
-              <div class="hex-row even2">
-                <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum3">N/A</span></div></div>
-                <div class="hex"><div class="hex-content">Binnensensor<br><span id="temp3">N/A</span></div></div>
-                <div class="line-right-3"></div>
-            </div>  
-        </div>         
-      </div>
-      <div class="sub-section sub3">
-        <img src="photos/dak.png" alt="Diagram" />
-      </div>
-    </div>
-    <div class="section section3">
-        <div class="footer">
-            <div class="qr-section">
-              <img src="photos/qr.png" alt="QR Code" />
-              <div>
-                <strong>PRODUCENT</strong><br>
-                <a href="https://price-ce.nl/">https://price-ce.nl/</a>
-              </div>
+              <div class="hex"><div class="hex-content">Binnentemp<br><span id="binnen">N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum1">N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Buitensensor<br><span id="temp1">N/A</span></div></div>
+              <div class="line-right-1"></div>
             </div>
-            <div class="logo-section">
-              <img src="photos/price_logo.png" alt="Price Logo" />
-              <img src="photos/matchmaker_logo.png" alt="Material Match Maker Logo" />
+            <div class="hex-row odd">
+              <div class="hex"><div class="hex-content">Buitentemp<br><span id="buiten">N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum2">N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Middensensor<br><span id="temp2">N/A</span></div></div>
+              <div class="line-right-2"></div>
+            </div>
+            <div class="hex-row even2">
+              <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum3">N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Binnensensor<br><span id="temp3">N/A</span></div></div>
+              <div class="line-right-3"></div>
+            </div>  
+          </div>         
+        </div>
+        <div class="sub-section sub3">
+          <img src="photos/dak.png" alt="Diagram" />
+        </div>
+      </div>
+      <div class="section section3">
+        <div class="footer">
+          <div class="qr-section">
+            <img src="photos/qr.png" alt="QR Code" />
+            <div>
+              <strong>PRODUCENT</strong><br>
+              <a href="https://price-ce.nl/">https://price-ce.nl/</a>
             </div>
           </div>
+          <div class="logo-section">
+            <img src="photos/price_logo.png" alt="Price Logo" />
+            <img src="photos/matchmaker_logo.png" alt="Material Match Maker Logo" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Isovlas Page -->
+    <div class="dashboard-page" id="page-isovlas">
+      <div class="section section1">
+        <header>
+          <h1>Isovlas (Sensor 2)</h1>
+          <p class="intro-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          </p>
+        </header>
+      </div>
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="radarChart-isovlas"></canvas>
+        </div>
+        <div class="sub-section sub2">
+          <div class="hex-grid">
+            <div class="hex-row even">
+              <div class="hex"><div class="hex-content">Binnentemp<br><span>N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Luchtvocht<br><span>N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Buitensensor<br><span>N/A</span></div></div>
+              <div class="line-right-1"></div>
+            </div>
+            <div class="hex-row odd">
+              <div class="hex"><div class="hex-content">Buitentemp<br><span>N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Luchtvocht<br><span>N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Middensensor<br><span>N/A</span></div></div>
+              <div class="line-right-2"></div>
+            </div>
+            <div class="hex-row even2">
+              <div class="hex"><div class="hex-content">Luchtvocht<br><span>N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Binnensensor<br><span>N/A</span></div></div>
+              <div class="line-right-3"></div>
+            </div>  
+          </div>         
+        </div>
+        <div class="sub-section sub3">
+          <img src="photos/dak.png" alt="Diagram" />
+        </div>
+      </div>
+      <div class="section section3">
+        <div class="footer">
+          <div class="qr-section">
+            <img src="photos/qr.png" alt="QR Code" />
+            <div>
+              <strong>PRODUCENT</strong><br>
+              <a href="https://price-ce.nl/">https://price-ce.nl/</a>
+            </div>
+          </div>
+          <div class="logo-section">
+            <img src="photos/price_logo.png" alt="Price Logo" />
+            <img src="photos/matchmaker_logo.png" alt="Material Match Maker Logo" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cellulose Page -->
+    <div class="dashboard-page" id="page-cellulose">
+      <div class="section section1">
+        <header>
+          <h1>Cellulose (Sensor 3)</h1>
+          <p class="intro-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          </p>
+        </header>
+      </div>
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="radarChart-cellulose"></canvas>
+        </div>
+        <div class="sub-section sub2">
+          <div class="hex-grid">
+            <div class="hex-row even">
+              <div class="hex"><div class="hex-content">Binnentemp<br><span>N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Luchtvocht<br><span>N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Buitensensor<br><span>N/A</span></div></div>
+              <div class="line-right-1"></div>
+            </div>
+            <div class="hex-row odd">
+              <div class="hex"><div class="hex-content">Buitentemp<br><span>N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Luchtvocht<br><span>N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Middensensor<br><span>N/A</span></div></div>
+              <div class="line-right-2"></div>
+            </div>
+            <div class="hex-row even2">
+              <div class="hex"><div class="hex-content">Luchtvocht<br><span>N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Binnensensor<br><span>N/A</span></div></div>
+              <div class="line-right-3"></div>
+            </div>  
+          </div>         
+        </div>
+        <div class="sub-section sub3">
+          <img src="photos/dak.png" alt="Diagram" />
+        </div>
+      </div>
+      <div class="section section3">
+        <div class="footer">
+          <div class="qr-section">
+            <img src="photos/qr.png" alt="QR Code" />
+            <div>
+              <strong>PRODUCENT</strong><br>
+              <a href="https://price-ce.nl/">https://price-ce.nl/</a>
+            </div>
+          </div>
+          <div class="logo-section">
+            <img src="photos/price_logo.png" alt="Price Logo" />
+            <img src="photos/matchmaker_logo.png" alt="Material Match Maker Logo" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hemkor Page -->
+    <div class="dashboard-page" id="page-hemkor">
+      <div class="section section1">
+        <header>
+          <h1>Hemkor (Sensor 4)</h1>
+          <p class="intro-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          </p>
+        </header>
+      </div>
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="radarChart-hemkor"></canvas>
+        </div>
+        <div class="sub-section sub2">
+          <div class="hex-grid">
+            <div class="hex-row even">
+              <div class="hex"><div class="hex-content">Binnentemp<br><span>N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Luchtvocht<br><span>N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Buitensensor<br><span>N/A</span></div></div>
+              <div class="line-right-1"></div>
+            </div>
+            <div class="hex-row odd">
+              <div class="hex"><div class="hex-content">Buitentemp<br><span>N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Luchtvocht<br><span>N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Middensensor<br><span>N/A</span></div></div>
+              <div class="line-right-2"></div>
+            </div>
+            <div class="hex-row even2">
+              <div class="hex"><div class="hex-content">Luchtvocht<br><span>N/A</span></div></div>
+              <div class="hex"><div class="hex-content">Binnensensor<br><span>N/A</span></div></div>
+              <div class="line-right-3"></div>
+            </div>  
+          </div>         
+        </div>
+        <div class="sub-section sub3">
+          <img src="photos/dak.png" alt="Diagram" />
+        </div>
+      </div>
+      <div class="section section3">
+        <div class="footer">
+          <div class="qr-section">
+            <img src="photos/qr.png" alt="QR Code" />
+            <div>
+              <strong>PRODUCENT</strong><br>
+              <a href="https://price-ce.nl/">https://price-ce.nl/</a>
+            </div>
+          </div>
+          <div class="logo-section">
+            <img src="photos/price_logo.png" alt="Price Logo" />
+            <img src="photos/matchmaker_logo.png" alt="Material Match Maker Logo" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</body>
-</html>
 
-<script>
-    const ctx = document.getElementById('radarChart').getContext('2d');
+  <script>
+    function showPage(page) {
+      document.querySelectorAll('.dashboard-page').forEach(function(el) {
+        el.classList.remove('active');
+      });
+      document.getElementById('page-' + page).classList.add('active');
+    }
 
-    const radarChart = new Chart(ctx, {
-      type: 'radar',
-      data: {
+    document.addEventListener('DOMContentLoaded', function () {
+      const radarData = {
         labels: [
           "milieu-impact levensduur",
           "CO₂-uitstoot tijdens productie",
@@ -95,7 +291,7 @@
         ],
         datasets: [{
           label: "Voorbeeldmateriaal",
-          data: [4, 3, 2, 5, 3, 4], // <--- DATA
+          data: [4, 3, 2, 5, 3, 4],
           backgroundColor: "rgba(33,32,62,0.6)", 
           borderColor: "rgba(100, 95, 45, 60)",
           pointBorderColor: "#fff",
@@ -104,36 +300,36 @@
           pointRadius: 0,         
           pointHoverRadius: 0     
         }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          r: {
-            angleLines: { display: false },
-            suggestedMin: 0,
-            suggestedMax: 5,
-            ticks: {
-              display: false, // <--- GETALLEN LATEN ZIEN
-              stepSize: 1,
-              backdropColor: "transparent"
-            },
-            pointLabels: {
-              font: {
-                size: 16
-              }
+      };
+      ['stro', 'isovlas', 'cellulose', 'hemkor'].forEach(function(page) {
+        const canvas = document.getElementById('radarChart-' + page);
+        if (canvas) {
+          new Chart(canvas.getContext('2d'), {
+            type: 'radar',
+            data: radarData,
+            options: {
+              responsive: true,
+              scales: {
+                r: {
+                  angleLines: { display: false },
+                  suggestedMin: 0,
+                  suggestedMax: 5,
+                  ticks: {
+                    display: false,
+                    stepSize: 1,
+                    backdropColor: "transparent"
+                  },
+                  pointLabels: {
+                    font: { size: 16 }
+                  }
+                }
+              },
+              plugins: { legend: { display: false } }
             }
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          }
+          });
         }
-      }
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
+      });
+
       const btn = document.querySelector('.load-btn');
       if (btn) {
         btn.addEventListener('click', function () {
@@ -143,3 +339,5 @@
       }
     });
   </script>
+</body>
+</html>

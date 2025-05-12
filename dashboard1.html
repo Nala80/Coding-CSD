@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400&display=swap" rel="stylesheet">
   <script src="chart.umd.js"></script>
   <script src="sensor_dashboard.js"></script>
+  <script src="weer_api.js"></script>
 </head>
 <body data-sensor="Sensor1">
   <div class="container">
@@ -37,13 +38,13 @@
       <div class="sub-section sub2">
         <div class="hex-grid">
             <div class="hex-row even">
-                <div class="hex"><div class="hex-content">Binnentemp<br><span id="buiten">N/A</span></div></div>
+                <div class="hex"><div class="hex-content">Binnentemp<br><span id="binnen">N/A</span></div></div>
                 <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum1">N/A</span></div></div>
                 <div class="hex"><div class="hex-content">Buitensensor<br><span id="temp1">N/A</span></div></div>
                 <div class="line-right-1"></div>
               </div>
               <div class="hex-row odd">
-                <div class="hex"><div class="hex-content">Buitentemp<br><span id="ms">N/A</span></div></div>
+                <div class="hex"><div class="hex-content">Buitentemp<br><span id="buiten">N/A</span></div></div>
                 <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum2">N/A</span></div></div>
                 <div class="hex"><div class="hex-content">Middensensor<br><span id="temp2">N/A</span></div></div>
                 <div class="line-right-2"></div>

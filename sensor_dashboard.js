@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Hiermee halen we de API op via php
     fetch("sensor_api.php")
         .then(response => response.json())
+        // data is response. Response is voor gemak omgezet naar json
         .then(data => {
 // console log in de browser (alleen voor debuggen)
             console.log(data)
@@ -32,8 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("temp1").textContent = eerst.temperature_1 + "°C";
                 document.getElementById("temp2").textContent = eerst.temperature_2 + "°C";
                 document.getElementById("temp3").textContent = eerst.temperature_3 + "°C";
-                // tijdelijk
-                document.getElementById("buiten").textContent = eerst.sensor_name + "(Dit is de sensor nummer)";
             }
 
         })

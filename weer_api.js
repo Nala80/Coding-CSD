@@ -10,5 +10,7 @@ fetch(weer_API)
         console.log(huidige_weer.temp)
 
         document.getElementById("buiten").textContent = huidige_weer.temp
-
+            document.getElementById("buiten_isovlas").textContent = huidige_weer.temp
+            document.getElementById("buiten_cellulose").textContent = huidige_weer.temp
+            document.getElementById("buiten_hemkor").textContent = huidige_weer.temp
     })

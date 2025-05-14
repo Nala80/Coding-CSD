@@ -168,6 +168,19 @@
     z-index: 2;
 }
 
+  .sub-section.sub1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 18px;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+    width: 100%;
+    margin-left: 0;
+    padding-left: 100px;
+}
+
   .intro-text {
     max-width: 800px;
     font-size: 0.7em;
@@ -251,19 +264,19 @@
   
  
   .hex-row.even .line-right-1 {
-    width: 340px;
+    width: 93%;
     top: 50%;
     margin-left: 350px;
   }
   
   .hex-row.odd .line-right-2 {
-    width: 320px;
+    width: 89%;
     top: 50%;
     margin-left: 350px;
   }
   
   .hex-row.even2 .line-right-3 {
-    width: 285px;
+    width: 123%;
     top: 50%;
     margin-left: 220px;
   }

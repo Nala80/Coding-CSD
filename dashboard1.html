@@ -50,7 +50,23 @@
       </div>
       <div class="section section2">
         <div class="sub-section sub1">
-          <canvas id="radarChart-stro"></canvas>
+          <!--<canvas id="radarChart-stro"></canvas>-->
+          <div>
+            <canvas id="dayChart-stro"></canvas>
+            <div style="text-align:center; margin-top:8px;">Dag</div>
+          </div>
+          <div>
+            <canvas id="weekChart-stro"></canvas>
+            <div style="text-align:center; margin-top:8px;">Week</div>
+          </div>
+          <div>
+            <canvas id="monthChart-stro"></canvas>
+            <div style="text-align:center; margin-top:8px;">Maand</div>
+          </div>
+          <div>
+            <canvas id="yearChart-stro"></canvas>
+            <div style="text-align:center; margin-top:8px;">Jaar</div>
+          </div>
         </div>
         <div class="sub-section sub2">
           <div class="hex-grid">
@@ -106,7 +122,7 @@
       </div>
       <div class="section section2">
         <div class="sub-section sub1">
-          <canvas id="radarChart-isovlas"></canvas>
+          <!--<canvas id="radarChart-isovlas"></canvas>-->
         </div>
         <div class="sub-section sub2">
           <div class="hex-grid">
@@ -162,7 +178,7 @@
       </div>
       <div class="section section2">
         <div class="sub-section sub1">
-          <canvas id="radarChart-cellulose"></canvas>
+          <!--<canvas id="radarChart-cellulose"></canvas>-->
         </div>
         <div class="sub-section sub2">
           <div class="hex-grid">
@@ -218,7 +234,7 @@
       </div>
       <div class="section section2">
         <div class="sub-section sub1">
-          <canvas id="radarChart-hemkor"></canvas>
+          <!--<canvas id="radarChart-hemkor"></canvas>-->
         </div>
         <div class="sub-section sub2">
           <div class="hex-grid">
@@ -329,6 +345,53 @@
           setTimeout(() => btn.classList.remove('spin'), 1000);
         });
       }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const mockData = {
+        day:   { labels: ['0u','6u','12u','18u','24u'], data: [19, 21, 23, 22, 20] },
+        week:  { labels: ['Ma','Di','Wo','Do','Vr','Za','Zo'], data: [21, 22, 20, 23, 22, 21, 20] },
+        month: { labels: Array.from({length: 4}, (_,i)=>`Week ${i+1}`), data: [21, 22, 23, 22] },
+        year:  { labels: ['Jan','Feb','Mrt','Apr','Mei','Jun','Jul','Aug','Sep','Okt','Nov','Dec'], data: [19,20,21,22,23,24,25,24,23,22,21,20] }
+      };
+      ['stro','isovlas','cellulose','hemkor'].forEach(function(page) {
+        // Day
+        new Chart(document.getElementById('dayChart-' + page), {
+          type: 'line',
+          data: {
+            labels: mockData.day.labels,
+            datasets: [{ label: 'Temperatuur', data: mockData.day.data, borderColor: '#3a3970', backgroundColor: 'rgba(58,57,112,0.1)', fill: true }]
+          },
+          options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: false } } }
+        });
+        // Week
+        new Chart(document.getElementById('weekChart-' + page), {
+          type: 'line',
+          data: {
+            labels: mockData.week.labels,
+            datasets: [{ label: 'Temperatuur', data: mockData.week.data, borderColor: '#3a3970', backgroundColor: 'rgba(58,57,112,0.1)', fill: true }]
+          },
+          options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: false } } }
+        });
+        // Month
+        new Chart(document.getElementById('monthChart-' + page), {
+          type: 'line',
+          data: {
+            labels: mockData.month.labels,
+            datasets: [{ label: 'Temperatuur', data: mockData.month.data, borderColor: '#3a3970', backgroundColor: 'rgba(58,57,112,0.1)', fill: true }]
+          },
+          options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: false } } }
+        });
+        // Year
+        new Chart(document.getElementById('yearChart-' + page), {
+          type: 'line',
+          data: {
+            labels: mockData.year.labels,
+            datasets: [{ label: 'Temperatuur', data: mockData.year.data, borderColor: '#3a3970', backgroundColor: 'rgba(58,57,112,0.1)', fill: true }]
+          },
+          options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: false } } }
+        });
+      });
     });
   </script>
 </body>

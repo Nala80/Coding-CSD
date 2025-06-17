@@ -16,6 +16,8 @@
 </head>
 <body data-sensor="Sensor1">
   <div class="container">
+
+    <!-- BUTTONS -->
     <button class="load-btn" type="button" aria-label="Reload">
       <img src="photos/reload.png" alt="Reload" class="reload-icon" />
     </button>
@@ -37,46 +39,31 @@
         <span class="btn-label">Hemkor</span>
       </button>
     </div>
+    <!-- BUTTONS -->
 
-    <!-- Stro Page -->
+    <!-- STRO -->
     <div class="dashboard-page active" id="page-stro">
       <div class="section section1">
         <header>
           <h1>Stro</h1>
           <p class="intro-text">
-            100% Biobased. Stro is een verrassend slim isolatiemateriaal dat perfect past bij een duurzame levensstijl. Het is een restproduct uit de landbouw en daarmee niet alleen milieuvriendelijk, maar ook goedkoop en ruim beschikbaar. Dankzij de uitstekende isolerende eigenschappen houdt stro je huis warm in de winter en koel in de zomer.         </p>
+            Stro is een verrassend slim isolatiemateriaal dat perfect past bij een duurzame levensstijl. Het is een restproduct uit de landbouw en daarmee niet alleen milieuvriendelijk, maar ook goedkoop en ruim beschikbaar. Dankzij de uitstekende isolerende eigenschappen houdt stro je huis warm in de winter en koel in de zomer.         </p>
         </header>
       </div>
       <div class="section section2">
         <div class="sub-section sub1">
           <!--<canvas id="radarChart-stro"></canvas>-->
-          <div>
-            <canvas id="dayChart-stro"></canvas>
-            <div style="text-align:center; margin-top:8px;">Dag</div>
-          </div>
-          <div>
-            <canvas id="weekChart-stro"></canvas>
-            <div style="text-align:center; margin-top:8px;">Week</div>
-          </div>
-          <div>
-            <canvas id="monthChart-stro"></canvas>
-            <div style="text-align:center; margin-top:8px;">Maand</div>
-          </div>
-          <div>
-            <canvas id="yearChart-stro"></canvas>
-            <div style="text-align:center; margin-top:8px;">Jaar</div>
-          </div>
         </div>
         <div class="sub-section sub2">
           <div class="hex-grid">
             <div class="hex-row even">
-              <div class="hex"><div class="hex-content">Binnentemp<br><span id="binnen">N/A</span></div></div>
+              <div class="hex special"><div class="hex-content">Binnentemp<br><span id="binnen">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum1">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Buitensensor<br><span id="temp1">N/A</span></div></div>
               <div class="line-right-1"></div>
             </div>
             <div class="hex-row odd">
-              <div class="hex"><div class="hex-content">Buitentemp<br><span id="buiten">N/A</span></div></div>
+              <div class="hex special"><div class="hex-content">Buitentemp<br><span id="buiten">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum2">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Middensensor<br><span id="temp2">N/A</span></div></div>
               <div class="line-right-2"></div>
@@ -92,30 +79,16 @@
           <img src="photos/dak.png" alt="Diagram" />
         </div>
       </div>
-      <div class="section section3">
-        <div class="footer">
-          <div class="qr-section">
-            <img src="photos/qr.png" alt="QR Code" />
-            <div>
-              <strong>PRODUCENT</strong><br>
-              <a href="https://price-ce.nl/">https://price-ce.nl/</a>
-            </div>
-          </div>
-          <div class="logo-section">
-            <img src="photos/price_logo.png" alt="Price Logo" />
-            <img src="photos/matchmaker_logo.png" alt="Material Match Maker Logo" />
-          </div>
-        </div>
-      </div>
     </div>
+    <!-- STRO -->
 
-    <!-- Isovlas Page -->
+    <!-- ISOVLAS -->
     <div class="dashboard-page" id="page-isovlas">
       <div class="section section1">
         <header>
           <h1>Isovlas</h1>
           <p class="intro-text">
-            75% Biobased. Isovlas is een natuurlijk isolatiemateriaal gemaakt van vlasvezels, een restproduct uit de textielindustrie. Het is ademend, vochtregulerend en zorgt voor een gezond binnenklimaat zonder schadelijke stoffen. Ideaal voor de duurzame bouwer die comfort én milieubewustzijn belangrijk vindt. Isovlas is volledig recyclebaar en heeft een lage ecologische voetafdruk.          </p>
+            Isovlas is een natuurlijk isolatiemateriaal gemaakt van vlasvezels, een restproduct uit de textielindustrie. Het is ademend, vochtregulerend en zorgt voor een gezond binnenklimaat zonder schadelijke stoffen. Ideaal voor de duurzame bouwer die comfort én milieubewustzijn belangrijk vindt. Isovlas is volledig recyclebaar en heeft een lage ecologische voetafdruk.          </p>
         </header>
       </div>
       <div class="section section2">
@@ -125,13 +98,13 @@
         <div class="sub-section sub2">
           <div class="hex-grid">
             <div class="hex-row even">
-              <div class="hex"><div class="hex-content">Binnentemp<br><span id="binnen_isovlas">N/A</span></div></div>
+              <div class="hex special"><div class="hex-content">Binnentemp<br><span id="binnen_isovlas">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum1_isovlas">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Buitensensor<br><span id="temp1_isovlas">N/A</span></div></div>
               <div class="line-right-1"></div>
             </div>
             <div class="hex-row odd">
-              <div class="hex"><div class="hex-content">Buitentemp<br><span id="buiten_isovlas">N/A</span></div></div>
+              <div class="hex special"><div class="hex-content">Buitentemp<br><span id="buiten_isovlas">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum2_isovlas">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Middensensor<br><span id="temp2_isovlas">N/A</span></div></div>
               <div class="line-right-2"></div>
@@ -147,30 +120,16 @@
           <img src="photos/dak.png" alt="Diagram" />
         </div>
       </div>
-      <div class="section section3">
-        <div class="footer">
-          <div class="qr-section">
-            <img src="photos/qr.png" alt="QR Code" />
-            <div>
-              <strong>PRODUCENT</strong><br>
-              <a href="https://price-ce.nl/">https://price-ce.nl/</a>
-            </div>
-          </div>
-          <div class="logo-section">
-            <img src="photos/price_logo.png" alt="Price Logo" />
-            <img src="photos/matchmaker_logo.png" alt="Material Match Maker Logo" />
-          </div>
-        </div>
-      </div>
     </div>
+    <!-- ISOVLAS -->
 
-    <!-- Cellulose Page -->
+    <!-- CELLULOSE -->
     <div class="dashboard-page" id="page-cellulose">
       <div class="section section1">
         <header>
           <h1>Cellulose</h1>
           <p class="intro-text">
-            100% Biobased. Cellulose is een ecologisch isolatiemateriaal dat wordt gemaakt van gerecycled krantenpapier — dus letterlijk oud nieuws in een nieuw jasje! Het isoleert uitstekend tegen kou én geluid, en past perfect bij wie circulair en duurzaam wil bouwen. Dankzij een toevoeging van natuurlijke zouten is cellulose brandwerend en bestand tegen schimmels en ongedierte.        </p>
+            Cellulose is een ecologisch isolatiemateriaal dat wordt gemaakt van gerecycled krantenpapier — dus letterlijk oud nieuws in een nieuw jasje! Het isoleert uitstekend tegen kou én geluid, en past perfect bij wie circulair en duurzaam wil bouwen. Dankzij een toevoeging van natuurlijke zouten is cellulose brandwerend en bestand tegen schimmels en ongedierte.        </p>
         </header>
       </div>
       <div class="section section2">
@@ -180,13 +139,13 @@
         <div class="sub-section sub2">
           <div class="hex-grid">
             <div class="hex-row even">
-              <div class="hex"><div class="hex-content">Binnentemp<br><span id="binnen_cellulose">N/A</span></div></div>
+              <div class="hex special"><div class="hex-content">Binnentemp<br><span id="binnen_cellulose">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum1_cellulose">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Buitensensor<br><span id="temp1_cellulose">N/A</span></div></div>
               <div class="line-right-1"></div>
             </div>
             <div class="hex-row odd">
-              <div class="hex"><div class="hex-content">Buitentemp<br><span id="buiten_cellulose">N/A</span></div></div>
+              <div class="hex special"><div class="hex-content">Buitentemp<br><span id="buiten_cellulose">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum2_cellulose">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Middensensor<br><span id="temp2_cellulose">N/A</span></div></div>
               <div class="line-right-2"></div>
@@ -202,30 +161,16 @@
           <img src="photos/dak.png" alt="Diagram" />
         </div>
       </div>
-      <div class="section section3">
-        <div class="footer">
-          <div class="qr-section">
-            <img src="photos/qr.png" alt="QR Code" />
-            <div>
-              <strong>PRODUCENT</strong><br>
-              <a href="https://price-ce.nl/">https://price-ce.nl/</a>
-            </div>
-          </div>
-          <div class="logo-section">
-            <img src="photos/price_logo.png" alt="Price Logo" />
-            <img src="photos/matchmaker_logo.png" alt="Material Match Maker Logo" />
-          </div>
-        </div>
-      </div>
     </div>
+    <!-- CELLULOSE -->
 
-    <!-- Hemkor Page -->
+    <!-- HEMKOR -->
     <div class="dashboard-page" id="page-hemkor">
       <div class="section section1">
         <header>
           <h1>Hemkor</h1>
           <p class="intro-text">
-            80% Biobased. HemKor is een innovatief isolatiemateriaal dat natuurlijke hennepvezels en gerecycled jute combineert tot een duurzame en efficiënte oplossing. Dankzij de ademende structuur en uitstekende isolatiewaarde draagt HemKor bij aan een gezond en comfortabel binnenklimaat. Het materiaal is schimmelwerend, veilig te verwerken.
+            HemKor is een innovatief isolatiemateriaal dat natuurlijke hennepvezels en gerecycled jute combineert tot een duurzame en efficiënte oplossing. Dankzij de ademende structuur en uitstekende isolatiewaarde draagt HemKor bij aan een gezond en comfortabel binnenklimaat. Het materiaal is schimmelwerend, veilig te verwerken.
           </p>
         </header>
       </div>
@@ -236,13 +181,13 @@
         <div class="sub-section sub2">
           <div class="hex-grid">
             <div class="hex-row even">
-              <div class="hex"><div class="hex-content">Binnentemp<br><span id="binnen_hemkor">N/A</span></div></div>
+              <div class="hex special"><div class="hex-content">Binnentemp<br><span id="binnen_hemkor">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum1_hemkor">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Buitensensor<br><span id="temp1_hemkor">N/A</span></div></div>
               <div class="line-right-1"></div>
             </div>
             <div class="hex-row odd">
-              <div class="hex"><div class="hex-content">Buitentemp<br><span id="buiten_hemkor">N/A</span></div></div>
+              <div class="hex special"><div class="hex-content">Buitentemp<br><span id="buiten_hemkor">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Luchtvocht<br><span id="hum2_hemkor">N/A</span></div></div>
               <div class="hex"><div class="hex-content">Middensensor<br><span id="temp2_hemkor">N/A</span></div></div>
               <div class="line-right-2"></div>
@@ -258,57 +203,46 @@
           <img src="photos/dak.png" alt="Diagram" />
         </div>
       </div>
-      <div class="section section3">
-        <div class="footer">
-          <div class="qr-section">
-            <img src="photos/qr.png" alt="QR Code" />
-            <div>
-              <strong>PRODUCENT</strong><br>
-              <a href="https://price-ce.nl/">https://price-ce.nl/</a>
-            </div>
-          </div>
-          <div class="logo-section">
-            <img src="photos/price_logo.png" alt="Price Logo" />
-            <img src="photos/matchmaker_logo.png" alt="Material Match Maker Logo" />
-          </div>
+    </div>
+    <!-- HEMKOR -->
+    
+    <!-- FOOTER -->  
+    <div class="section section3">  
+      <div class="footer">
+        <div class="qr-section">
+          <img src="photos/qr.png" alt="QR Code" />
+        <div>
+        <strong>PRODUCENT</strong><br>
+          <a href="https://price-ce.nl/">https://price-ce.nl/</a>
+        </div>
+      </div>
+        <div class="logo-section">
+          <img src="photos/price_logo.png" alt="Price Logo" />
+          <img src="photos/matchmaker_logo.png" alt="Material Match Maker Logo" />
         </div>
       </div>
     </div>
-  </div>
+    </div>
+    <!-- FOOTER --> 
+  
 
   <script>
-
-    fetch("sensor_api")
-            .then(response => response.json())
-            .then(data => {
-
-
-              console.log(data)
-
-
-
-
-              // hier binnen moet je werken
-
-
-
-            })
-
-
-
-
-
-
-
-
-
-
     function showPage(page) {
-      document.querySelectorAll('.dashboard-page').forEach(function(el) {
-        el.classList.remove('active');
-      });
-      document.getElementById('page-' + page).classList.add('active');
-    }
+  document.querySelectorAll('.dashboard-page').forEach(function(el) {
+    el.classList.remove('active');
+  });
+  document.getElementById('page-' + page).classList.add('active');
+
+  document.querySelectorAll('.top-right-buttons .stro-btn').forEach(function(btn) {
+    btn.classList.remove('active');
+  });
+  const btn = document.querySelector(`.top-right-buttons .stro-btn[onclick*="${page}"]`);
+  if (btn) btn.classList.add('active');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  showPage('stro');
+});
 
     document.addEventListener('DOMContentLoaded', function () {
       const radarData = {
@@ -368,53 +302,6 @@
           setTimeout(() => btn.classList.remove('spin'), 1000);
         });
       }
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const mockData = {
-        day:   { labels: ['0u','1u','2u','3u','4u','5u','6u','7u','8u','9u','10u','11u','12u','13u','14u','15u','16u','17u','18u','19u','20u','21u','22u','23u','24u'], data: [-27, 21, 23, 22, 40] },
-        week:  { labels: ['Ma','Di','Wo','Do','Vr','Za','Zo'], data: [21, 22, 20, 23, 22, 21, 20] },
-        month: { labels: Array.from({length: 4}, (_,i)=>`Week ${i+1}`), data: [21, 22, 23, 22] },
-        year:  { labels: ['Jan','Feb','Mrt','Apr','Mei','Jun','Jul','Aug','Sep','Okt','Nov','Dec'], data: [19,20,21,22,23,24,25,24,23,22,21,20] }
-      };
-      ['stro','isovlas','cellulose','hemkor'].forEach(function(page) {
-        // Day
-        new Chart(document.getElementById('dayChart-' + page), {
-          type: 'line',
-          data: {
-            labels: mockData.day.labels,
-            datasets: [{ label: 'Temperatuur', data: mockData.day.data, borderColor: '#3a3970', backgroundColor: 'rgba(58,57,112,0.1)', fill: true }]
-          },
-          options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: false } } }
-        });
-        // Week
-        new Chart(document.getElementById('weekChart-' + page), {
-          type: 'line',
-          data: {
-            labels: mockData.week.labels,
-            datasets: [{ label: 'Temperatuur', data: mockData.week.data, borderColor: '#3a3970', backgroundColor: 'rgba(58,57,112,0.1)', fill: true }]
-          },
-          options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: false } } }
-        });
-        // Month
-        new Chart(document.getElementById('monthChart-' + page), {
-          type: 'line',
-          data: {
-            labels: mockData.month.labels,
-            datasets: [{ label: 'Temperatuur', data: mockData.month.data, borderColor: '#3a3970', backgroundColor: 'rgba(58,57,112,0.1)', fill: true }]
-          },
-          options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: false } } }
-        });
-        // Year
-        new Chart(document.getElementById('yearChart-' + page), {
-          type: 'line',
-          data: {
-            labels: mockData.year.labels,
-            datasets: [{ label: 'Temperatuur', data: mockData.year.data, borderColor: '#3a3970', backgroundColor: 'rgba(58,57,112,0.1)', fill: true }]
-          },
-          options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: false } } }
-        });
-      });
     });
   </script>
 </body>

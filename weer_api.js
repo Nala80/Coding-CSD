@@ -22,6 +22,7 @@ async function fetchWeerApi() {
         const data = await res.json()
         let huidige_weer;
         huidige_weer = data.liveweer[0]
+        console.log(data)
         console.log(huidige_weer.temp)
         const now = new Date()
         console.log("Het is nu: " + now.toLocaleTimeString());

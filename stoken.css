@@ -48,7 +48,7 @@ header {
 
 .section2 {
     display: grid;
-    grid-template-columns: 18% 30% 35%;
+    grid-template-columns: 18% 40% 30%;
     gap: 2px;
     position: relative;
 }
@@ -57,18 +57,20 @@ header {
     margin-left: 50px;
 }
 
-.section2::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 1.5px;
-    background: black;
-    z-index: 100;
-}
+
+
+/*.section2::after {*/
+/*    content: '';*/
+/*    display: block;*/
+/*    position: absolute;*/
+/*    left: 50%;*/
+/*    bottom: 0;*/
+/*    transform: translateX(-50%);*/
+/*    width: 80%;*/
+/*    height: 1.5px;*/
+/*    background: black;*/
+/*    z-index: 100;*/
+/*}*/
 
 .sub-section {
     display: flex;
@@ -99,7 +101,7 @@ header {
     flex-wrap: wrap;
     position: relative;
     width: 100%;
-    padding: 30px;
+    padding: 0.5%;
 }
 
 .qr-section {
@@ -153,15 +155,17 @@ header {
 .sub-section.sub2 {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     height: 100%;
     width: 100%;
     padding: 0;
     padding-bottom: 20px;
-    padding-left: 250px;
+    padding-right: 4%;
     position: relative;
     z-index: 2;
+    grid-column: 3;
 }
+
 
 .sub-section.sub1 {
     display: grid;
@@ -186,6 +190,7 @@ header {
     flex-direction: column;
     align-items: center;
     overflow: visible;
+
 }
 
 .hex-row {
@@ -196,12 +201,15 @@ header {
 
 .hex-row.odd,
 .hex-row.even2 {
-    margin-right: 140px;
+    margin-left: 30%;
+}
+.hex-row.odd1{
+    margin-right: 4%;
 }
 
 .hex {
-    width: 140px;
-    height: 140px;
+    width: 145px;
+    height: 145px;
     background: #C1A3F2;
     position: relative;
     display: flex;
@@ -211,21 +219,27 @@ header {
     font-size: 0.8em;
     text-align: center;
     clip-path: polygon(
-      50% 0%,
-      93% 25%,
-      93% 75%,
-      50% 100%,
-      7% 75%,
-      7% 25%
+            50% 0%,
+            93% 25%,
+            93% 75%,
+            50% 100%,
+            7% 75%,
+            7% 25%
     );
     transition: transform 0.2s ease-in-out;
     overflow: visible;
-    z-index: 10;
+    z-index: 5;
+    pointer-events: none;
+}
+
+
+.invis{
+    opacity: 0;
 }
 
 .special {
-  background: #7734E2;
-  !important;
+    background: #7734E2;
+!important;
 }
 
 .hex:hover {
@@ -235,6 +249,7 @@ header {
 
 .hex-content {
     line-height: 1.2em;
+    pointer-events: none;
 }
 
 .line-right-1,
@@ -320,10 +335,10 @@ header {
     font-size: 1em;
     cursor: pointer;
     transition:
-        background 0.2s,
-        width 0.3s cubic-bezier(.4,0,.2,1),
-        height 0.3s cubic-bezier(.4,0,.2,1),
-        box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+            background 0.2s,
+            width 0.3s cubic-bezier(.4,0,.2,1),
+            height 0.3s cubic-bezier(.4,0,.2,1),
+            box-shadow 0.3s cubic-bezier(.4,0,.2,1);
     height: 80px;
     width: 85px;
     position: relative;
@@ -401,3 +416,16 @@ header {
     z-index: 2;
 }
 
+.grafiek-sectie{
+    width: 320%;
+    margin-left: 15%;
+    margin-top: 12%;
+    position: relative;
+    z-index: 1;
+}
+
+.grafiek-sectie canvas {
+    position: relative;
+    z-index: 20;
+    pointer-events: auto;
+}

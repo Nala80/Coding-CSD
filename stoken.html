@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Blueprint</title>
+<!--    <link rel="stylesheet" href="dashboard1.css" />-->
+    <link rel="stylesheet" href="stoken.css">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400&display=swap" rel="stylesheet">
+    <script src="chart.umd.js"></script>
+    <script src="sensor_dashboard.js"></script>
+    <script src="weer_api.js"></script>
+    <script src="dynamisch_stoken.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0/dist/chartjs-plugin-annotation.min.js"></script>
+</head>
+<body data-sensor="Sensor1">
+<div class="container">
+
+    <!-- BUTTONS -->
+    <button class="load-btn" type="button" aria-label="Reload">
+        <img src="photos/reload.png" alt="Reload" class="reload-icon" />
+    </button>
+    <div class="top-right-buttons">
+        <button type="button" class="stro-btn" onclick="showPage('stro')">
+            <span class="stro"></span>
+            <span class="btn-label">Stro</span>
+        </button>
+        <button type="button" class="stro-btn" onclick="showPage('isovlas')">
+            <span class="isovlas"></span>
+            <span class="btn-label">Isovlas</span>
+        </button>
+        <button type="button" class="stro-btn" onclick="showPage('cellulose')">
+            <span class="cellulose"></span>
+            <span class="btn-label">Cellulose</span>
+        </button>
+        <button type="button" class="stro-btn" onclick="showPage('hemkor')">
+            <span class="hemkor"></span>
+            <span class="btn-label">Hemkor</span>
+        </button>
+    </div>
+    <!-- BUTTONS -->
+
+    <!-- STRO -->
+    <div class="dashboard-page active" id="page-stro">
+        <div class="section section1">
+            <header>
+                <h1>Stro</h1>
+                <p class="intro-text">
+                    Stro is een verrassend slim isolatiemateriaal dat perfect past bij een duurzame levensstijl. Het is een restproduct uit de landbouw en daarmee niet alleen milieuvriendelijk, maar ook goedkoop en ruim beschikbaar. Dankzij de uitstekende isolerende eigenschappen houdt stro je huis warm in de winter en koel in de zomer.         </p>
+            </header>
+        </div>
+        <div class="section section2">
+
+                    <section class="grafiek-sectie canvas">
+                        <h2>Energieprijs vs. Stookmomenten (afgelopen 24h)</h2>
+                        <canvas id="stookChart"></canvas>
+                    </section>
+
+
+            <div class="sub-section sub2">
+                <div class="hex-grid">
+                    <div class="hex-row odd">
+                        <div class="hex special"><div class="hex-content">Huidige Prijs<br><span id="huidigePrijs">N/A</span></div></div>
+                        <div class="hex special"><div class="hex-content">Besparingen Vandaag<br><span id="besparingenVandaag">N/A</span></div></div>
+                        <div class="hex invis"></div>
+                    </div>
+                    <div class="hex-row even2">
+                        <div class="hex special"><div class="hex-content">Status Kachel<br><span id="statusKachel">N/A</span></div></div>
+                        <div class="hex special"><div class="hex-content">Volgende Stookmoment<br><span id="volgendeStookmoment">N/A</span></div></div>
+                    </div>
+                    <div class="hex-row odd1">
+                        <div class="hex special"><div class="hex-content">Binnentemp<br><span id="binnen">N/A</span></div></div>
+                        <div class="hex special"><div class="hex-content">Buitentemp<br><span id="buiten">N/A</span></div></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- STRO -->
+
+
+
+    <!-- FOOTER -->
+    <div class="section section3">
+        <div class="footer">
+            <div class="qr-section">
+                <img src="photos/qr.png" alt="QR Code" />
+                <div>
+                    <strong>PRODUCENT</strong><br>
+                    <a href="https://price-ce.nl/">https://price-ce.nl/</a>
+                </div>
+            </div>
+            <div class="logo-section">
+                <img src="photos/price_logo.png" alt="Price Logo" />
+                <img src="photos/matchmaker_logo.png" alt="Material Match Maker Logo" />
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FOOTER -->
+
+</body>
+</html>

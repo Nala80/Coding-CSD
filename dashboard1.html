@@ -9,18 +9,18 @@
   <script src="chart.umd.js"></script>
   <script src="sensor_dashboard.js"></script>
   <script src="weer_api.js"></script>
-  <style>
-    .dashboard-page { display: none; }
-    .dashboard-page.active { display: block; }
-  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
 </head>
 <body data-sensor="Sensor1">
   <div class="container">
 
     <!-- BUTTONS -->
-    <button class="load-btn" type="button" aria-label="Reload">
-      <img src="photos/reload.png" alt="Reload" class="reload-icon" />
-    </button>
+    <div style="position: absolute; top: 18px;  z-index: 300; text-align: center; width: 80px;">
+      <button class="load-btn" type="button" aria-label="Reload" style="padding-left: 25px;">
+        <img src="photos/reload.png" alt="Reload" class="reload-icon" />
+      </button>
+      <div id="start-time" style="font-size: 0.9em; color: #555; left: 0px;"></div>
+    </div>
     <div class="top-right-buttons">
       <button type="button" class="stro-btn" onclick="showPage('stro')">
         <span class="stro"></span>
@@ -38,7 +38,9 @@
         <span class="hemkor"></span>
         <span class="btn-label">Hemkor</span>
       </button>
+      
     </div>
+    
     <!-- BUTTONS -->
 
     <!-- STRO -->
@@ -50,9 +52,10 @@
             Stro is een verrassend slim isolatiemateriaal dat perfect past bij een duurzame levensstijl. Het is een restproduct uit de landbouw en daarmee niet alleen milieuvriendelijk, maar ook goedkoop en ruim beschikbaar. Dankzij de uitstekende isolerende eigenschappen houdt stro je huis warm in de winter en koel in de zomer.         </p>
         </header>
       </div>
+       
+      <!-- PAGINA 1 -->
       <div class="section section2">
         <div class="sub-section sub1">
-          <!--<canvas id="radarChart-stro"></canvas>-->
         </div>
         <div class="sub-section sub2">
           <div class="hex-grid">
@@ -79,6 +82,54 @@
           <img src="photos/dak.png" alt="Diagram" />
         </div>
       </div>
+      <!-- PAGINA 1 -->
+      
+      <!-- PAGINA 2 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="radarChart-stro" style="height:400px; min-width:1400px;"></canvas>
+        </div>
+        <div class="sub-section sub2">
+                  
+        </div>
+        <div class="sub-section sub3">
+        
+        </div>
+      </div>
+      <!-- PAGINA 2 -->
+      
+      <!-- PAGINA 3 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="temp24hChart-stro" style="height:400px; min-width:1400px;"></canvas>  
+        </div>
+      </div>
+      <!-- PAGINA 3 -->
+      
+      <!-- PAGINA 4 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="tempWeekChart-stro" style="height:400px; min-width:1400px;"></canvas>
+        </div>
+      </div>
+      <!-- PAGINA 4 -->
+
+      <!-- PAGINA 5 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="tempMonthChart-stro" style="height:400px; min-width:1400px;"></canvas>
+        </div>
+      </div>
+      <!-- PAGINA 5 -->
+
+      <!-- PAGINA 6 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="tempYearChart-stro" style="height:400px; min-width:1400px;"></canvas>
+        </div>
+      </div>
+      <!-- PAGINA 6 -->
+      
     </div>
     <!-- STRO -->
 
@@ -91,9 +142,10 @@
             Isovlas is een natuurlijk isolatiemateriaal gemaakt van vlasvezels, een restproduct uit de textielindustrie. Het is ademend, vochtregulerend en zorgt voor een gezond binnenklimaat zonder schadelijke stoffen. Ideaal voor de duurzame bouwer die comfort én milieubewustzijn belangrijk vindt. Isovlas is volledig recyclebaar en heeft een lage ecologische voetafdruk.          </p>
         </header>
       </div>
+
+      <!-- PAGINA 1 -->
       <div class="section section2">
         <div class="sub-section sub1">
-          <!--<canvas id="radarChart-isovlas"></canvas>-->
         </div>
         <div class="sub-section sub2">
           <div class="hex-grid">
@@ -120,6 +172,53 @@
           <img src="photos/dak.png" alt="Diagram" />
         </div>
       </div>
+      <!-- PAGINA 1 -->
+
+      <!-- PAGINA 2 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="radarChart-isovlas"></canvas>
+        </div>
+        <div class="sub-section sub2">
+                  
+        </div>
+        <div class="sub-section sub3">
+        
+        </div>
+      </div>
+      <!-- PAGINA 2 -->
+      
+      <!-- PAGINA 3 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="temp24hChart-isovlas" style="height:400px; min-width:1400px;"></canvas>  
+        </div>
+      </div>
+      <!-- PAGINA 3 -->
+      
+      <!-- PAGINA 4 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="tempWeekChart-isovlas" style="height:400px; min-width:1400px;"></canvas>
+        </div>
+      </div>
+      <!-- PAGINA 4 -->
+
+      <!-- PAGINA 5 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="tempMonthChart-isovlas" style="height:400px; min-width:1400px;"></canvas>
+        </div>
+      </div>
+      <!-- PAGINA 5 -->
+
+      <!-- PAGINA 6 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="tempYearChart-isovlas" style="height:400px; min-width:1400px;"></canvas>
+        </div>
+      </div>
+      <!-- PAGINA 6 -->
     </div>
     <!-- ISOVLAS -->
 
@@ -132,9 +231,10 @@
             Cellulose is een ecologisch isolatiemateriaal dat wordt gemaakt van gerecycled krantenpapier — dus letterlijk oud nieuws in een nieuw jasje! Het isoleert uitstekend tegen kou én geluid, en past perfect bij wie circulair en duurzaam wil bouwen. Dankzij een toevoeging van natuurlijke zouten is cellulose brandwerend en bestand tegen schimmels en ongedierte.        </p>
         </header>
       </div>
+
+      <!-- PAGINA 1 -->
       <div class="section section2">
         <div class="sub-section sub1">
-          <!--<canvas id="radarChart-cellulose"></canvas>-->
         </div>
         <div class="sub-section sub2">
           <div class="hex-grid">
@@ -161,6 +261,54 @@
           <img src="photos/dak.png" alt="Diagram" />
         </div>
       </div>
+      <!-- PAGINA 1 -->
+
+      <!-- PAGINA 2 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="radarChart-cellulose"></canvas>
+        </div>
+        <div class="sub-section sub2">
+                  
+        </div>
+        <div class="sub-section sub3">
+        
+        </div>
+      </div>
+      <!-- PAGINA 2 -->
+      
+      <!-- PAGINA 3 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="temp24hChart-cellulose" style="height:400px; min-width:1400px;"></canvas>  
+        </div>
+      </div>
+      <!-- PAGINA 3 -->
+      
+      <!-- PAGINA 4 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="tempWeekChart-cellulose" style="height:400px; min-width:1400px;"></canvas>
+        </div>
+      </div>
+      <!-- PAGINA 4 -->
+
+      <!-- PAGINA 5 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="tempMonthChart-cellulose" style="height:400px; min-width:1400px;"></canvas>
+        </div>
+      </div>
+      <!-- PAGINA 5 -->
+
+      <!-- PAGINA 6 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="tempYearChart-cellulose" style="height:400px; min-width:1400px;"></canvas>
+        </div>
+      </div>
+      <!-- PAGINA 6 -->
+
     </div>
     <!-- CELLULOSE -->
 
@@ -174,9 +322,10 @@
           </p>
         </header>
       </div>
+      
+      <!-- PAGINA 1 -->
       <div class="section section2">
         <div class="sub-section sub1">
-          <!--<canvas id="radarChart-hemkor"></canvas>-->
         </div>
         <div class="sub-section sub2">
           <div class="hex-grid">
@@ -203,6 +352,54 @@
           <img src="photos/dak.png" alt="Diagram" />
         </div>
       </div>
+      <!-- PAGINA 1 -->
+
+      <!-- PAGINA 2 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="radarChart-hemkor"></canvas>
+        </div>
+        <div class="sub-section sub2">
+                  
+        </div>
+        <div class="sub-section sub3">
+        
+        </div>
+      </div>
+      <!-- PAGINA 2 -->
+      
+      <!-- PAGINA 3 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="temp24hChart-hemkor" style="height:400px; min-width:1400px;"></canvas>  
+        </div>
+      </div>
+      <!-- PAGINA 3 -->
+      
+      <!-- PAGINA 4 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="tempWeekChart-hemkor" style="height:400px; min-width:1400px;"></canvas>
+        </div>
+      </div>
+      <!-- PAGINA 4 -->
+
+      <!-- PAGINA 5 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="tempMonthChart-hemkor" style="height:400px; min-width:1400px;"></canvas>
+        </div>
+      </div>
+      <!-- PAGINA 5 -->
+
+      <!-- PAGINA 6 -->
+      <div class="section section2">
+        <div class="sub-section sub1">
+          <canvas id="tempYearChart-hemkor" style="height:400px; min-width:1400px;"></canvas>
+        </div>
+      </div>
+      <!-- PAGINA 6 -->
+
     </div>
     <!-- HEMKOR -->
     
@@ -222,79 +419,20 @@
         </div>
       </div>
     </div>
-    </div>
     <!-- FOOTER --> 
+  
   
 
   <script>
-    function showPage(page) {
-  document.querySelectorAll('.dashboard-page').forEach(function(el) {
-    el.classList.remove('active');
-  });
-  document.getElementById('page-' + page).classList.add('active');
-
-  document.querySelectorAll('.top-right-buttons .stro-btn').forEach(function(btn) {
-    btn.classList.remove('active');
-  });
-  const btn = document.querySelector(`.top-right-buttons .stro-btn[onclick*="${page}"]`);
-  if (btn) btn.classList.add('active');
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  showPage('stro');
-});
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const radarData = {
-        labels: [
-          "milieu-impact levensduur",
-          "CO₂-uitstoot tijdens productie",
-          "CO₂-opslag in materiaal",
-          "hergebruik, losmaakbaarheid",
-          "gezondheids-impact",
-          "geografische herkomst"
-        ],
-        datasets: [{
-          label: "Voorbeeldmateriaal",
-          data: [4, 3, 2, 5, 3, 4],
-          backgroundColor: "rgba(33,32,62,0.6)", 
-          borderColor: "rgba(100, 95, 45, 60)",
-          pointBorderColor: "#fff",
-          pointHoverBackgroundColor: "#fff",
-          pointHoverBorderColor: "rgba(54, 162, 235, 1)",
-          pointRadius: 0,         
-          pointHoverRadius: 0     
-        }]
-      };
-      ['stro', 'isovlas', 'cellulose', 'hemkor'].forEach(function(page) {
-        const canvas = document.getElementById('radarChart-' + page);
-        if (canvas) {
-          new Chart(canvas.getContext('2d'), {
-            type: 'radar',
-            data: radarData,
-            options: {
-              responsive: true,
-              scales: {
-                r: {
-                  angleLines: { display: false },
-                  suggestedMin: 0,
-                  suggestedMax: 5,
-                  ticks: {
-                    display: false,
-                    stepSize: 1,
-                    backdropColor: "transparent"
-                  },
-                  pointLabels: {
-                    font: { size: 16 }
-                  }
-                }
-              },
-              plugins: { legend: { display: false } }
-            }
-          });
-        }
+    document.addEventListener('DOMContentLoaded', function() {
+      showPage('stro');
+      document.addEventListener('keydown', function(e) {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        if (e.key === '1') showPage('stro');
+        if (e.key === '2') showPage('isovlas');
+        if (e.key === '3') showPage('cellulose');
+        if (e.key === '4') showPage('hemkor');
       });
-
       const btn = document.querySelector('.load-btn');
       if (btn) {
         btn.addEventListener('click', function () {
@@ -302,7 +440,503 @@ document.addEventListener('DOMContentLoaded', function() {
           setTimeout(() => btn.classList.remove('spin'), 1000);
         });
       }
+      
+      // Initialize all charts
+      initializeAllCharts();
+      
+      // Start page cycling for all dashboards
+      startDashboardCycling();
     });
+
+    function showPage(page) {
+      document.querySelectorAll('.dashboard-page').forEach(function(el) {
+        el.classList.remove('active');
+      });
+      document.getElementById('page-' + page).classList.add('active');
+
+      document.querySelectorAll('.top-right-buttons .stro-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      const btn = document.querySelector(`.top-right-buttons .stro-btn[onclick*="${page}"]`);
+      if (btn) btn.classList.add('active');
+    }
+    
+    function initializeAllCharts() {
+      const radarData = {
+        stro: {
+          labels: [
+            "Milieu-impact levensduur",
+            "CO₂-uitstoot tijdens productie",
+            "CO₂-opslag in materiaal",
+            "Hergebruik, losmaakbaarheid",
+            "Gezondheids-impact",
+            "Geografische herkomst"
+          ],
+          data: [5, 4, 3, 4, 5, 3],
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)'
+        },
+        isovlas: {
+          labels: [
+            "Milieu-impact levensduur",
+            "CO₂-uitstoot tijdens productie",
+            "CO₂-opslag in materiaal",
+            "Hergebruik, losmaakbaarheid",
+            "Gezondheids-impact",
+            "Geografische herkomst"
+          ],
+          data: [5, 4, 3, 4, 5, 3],
+          borderColor: 'rgba(54, 162, 235, 1)',
+          backgroundColor: 'rgba(54, 162, 235, 0.2)'
+        },
+        cellulose: {
+          labels: [
+            "Milieu-impact levensduur",
+            "CO₂-uitstoot tijdens productie",
+            "CO₂-opslag in materiaal",
+            "Hergebruik, losmaakbaarheid",
+            "Gezondheids-impact",
+            "Geografische herkomst"
+          ],
+          data: [5, 4, 3, 4, 5, 3],
+          borderColor: 'rgba(255, 206, 86, 1)',
+          backgroundColor: 'rgba(255, 206, 86, 0.2)'
+        },
+        hemkor: {
+          labels: [
+            "Milieu-impact levensduur",
+            "CO₂-uitstoot tijdens productie",
+            "CO₂-opslag in materiaal",
+            "Hergebruik, losmaakbaarheid",
+            "Gezondheids-impact",
+            "Geografische herkomst"
+          ],
+          data: [1, 1, 1, 1, 1, 5],
+          borderColor: 'rgba(153, 102, 255, 1)',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)'
+        }
+      };
+
+      createRadarChart('radarChart-stro', radarData.stro);
+      createRadarChart('radarChart-isovlas', radarData.isovlas);
+      createRadarChart('radarChart-cellulose', radarData.cellulose);
+      createRadarChart('radarChart-hemkor', radarData.hemkor);
+
+      // Initialize all time-based charts for each dashboard
+      ['stro', 'isovlas', 'cellulose', 'hemkor'].forEach(material => {
+        createTimeBasedCharts(material);
+      });
+    }
+    
+    function createTimeBasedCharts(material) {
+      const now = new Date();
+
+      function getTempData(n, start = 20) {
+        const arr = [];
+        let temp = start;
+        for (let i = 0; i < n; i++) {
+          temp += (Math.random() - 0.5) * 0.5;
+          arr.push(Number(temp.toFixed(2)));
+        }
+        return arr;
+      }
+
+      function downsampleAvg(data, factor) {
+        const result = [];
+        for (let i = 0; i < data.length; i += factor) {
+          const chunk = data.slice(i, i + factor);
+          const avg = chunk.reduce((a, b) => a + b, 0) / chunk.length;
+          result.push(Number(avg.toFixed(2)));
+        }
+        return result;
+      }
+
+      // 24 uur: 288 punten (elke 5 minuten)
+      const dayPoints = 24 * 12;
+      const dayData = getTempData(dayPoints, 20);
+
+      // Labels: elk uur labelen, rest leeg
+      const dayLabels = [];
+      for (let i = 0; i < dayPoints; i++) {
+        const d = new Date(now.getTime() - (dayPoints - 1 - i) * 5 * 60 * 1000);
+        dayLabels.push(d.getMinutes() === 0 ? d.getHours() + ":00" : "");
+      }
+
+      // WEEK (7 dagen, 2016 punten)
+      const weekPoints = 7 * 24 * 12;
+      const weekRawData = getTempData(weekPoints, 20);
+      const weekData = downsampleAvg(weekRawData, 288); // 1 per dag
+
+      const weekLabels = [];
+      for (let i = 0; i < weekData.length; i++) {
+        const d = new Date(now.getTime() - (weekData.length - 1 - i) * 24 * 60 * 60 * 1000);
+        weekLabels.push(d.getDate() + '/' + (d.getMonth() + 1));
+      }
+
+      // MAAND (30 dagen, 8640 punten)
+      const monthPoints = 30 * 24 * 12;
+      const monthRawData = getTempData(monthPoints, 18);
+      const monthData = downsampleAvg(monthRawData, 288); // 1 per dag
+
+      const monthLabels = [];
+      for (let i = 0; i < monthData.length; i++) {
+        const d = new Date(now.getTime() - (monthData.length - 1 - i) * 24 * 60 * 60 * 1000);
+        monthLabels.push(d.getDate() + '/' + (d.getMonth() + 1));
+      }
+
+      // JAAR (365 dagen, 105120 punten)
+      const yearPoints = 365 * 24 * 12;
+      const yearRawData = getTempData(yearPoints, 15);
+      const yearData = downsampleAvg(yearRawData, 288); // 288 x 5min = 1 dag
+
+      // Labels voor elke dag:
+      const yearLabels = [];
+      for (let i = 0; i < yearData.length; i++) {
+        const d = new Date(now.getTime() - (yearData.length - 1 - i) * 24 * 60 * 60 * 1000);
+        yearLabels.push(d.getDate() + '/' + (d.getMonth() + 1));
+      }
+
+      function makeDatasets(mainData, labelPrefix = "Lijn") {
+        return [
+          {
+            label: "Buitentemperatuur",
+            data: mainData.map(v => v - 2 + Math.random() * 0.5),
+            borderColor: 'rgba(54, 162, 235, 1)',
+            backgroundColor: 'rgba(54, 162, 235, 0.1)',
+            borderWidth: 2,
+            pointRadius: 0,
+            tension: 0.1
+          },
+          {
+            label: "Binnentemperatuur",
+            data: mainData.map(v => v + 2 + Math.random() * 0.5),
+            borderColor: 'rgba(255, 99, 132, 1)',
+            backgroundColor: 'rgba(255, 99, 132, 0.1)',
+            borderWidth: 2,
+            pointRadius: 0,
+            tension: 0.1
+          },
+          {
+            label: "Middensensor",
+            data: mainData.map(v => v + 1 + Math.random() * 0.5),
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.1)',
+            borderWidth: 2,
+            pointRadius: 0,
+            tension: 0.1
+          },
+          {
+            label: "Buitensensor",
+            data: mainData.map(v => v - 1 + Math.random() * 0.5),
+            borderColor: 'rgba(153, 102, 255, 1)',
+            backgroundColor: 'rgba(153, 102, 255, 0.1)',
+            borderWidth: 2,
+            pointRadius: 0,
+            tension: 0.1
+          },
+          {
+            label: "Binnensensor",
+            data: mainData.map(v => v + 3 + Math.random() * 0.5),
+            borderColor: 'rgba(255, 159, 64, 1)',
+            backgroundColor: 'rgba(255, 159, 64, 0.1)',
+            borderWidth: 2,
+            pointRadius: 0,
+            tension: 0.1
+          }
+        ];
+      }
+
+      // WEEK CHART
+      const weekCtx = document.getElementById(`tempWeekChart-${material}`);
+      if (weekCtx) {
+        new Chart(weekCtx, {
+          type: 'line',
+          data: {
+            labels: weekLabels,
+            datasets: makeDatasets(weekData)
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { 
+                display: true,
+                position: 'top',
+                labels: {
+                  boxWidth: 12,
+                  padding: 20
+                }
+              },
+              tooltip: {
+                callbacks: {
+                  label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y} °C`
+                }
+              }
+            },
+            scales: {
+              x: {
+                title: { display: true, text: 'Tijd (laatste 7 dagen)', font: { size: 14 } },
+                ticks: { font: { size: 10 }, autoSkip: false, maxRotation: 0, minRotation: 0 },
+                grid: { color: 'rgba(200,200,200,0.15)' }
+              },
+              y: {
+                title: { display: true, text: 'Temperatuur (°C)', font: { size: 14 } },
+                grid: { color: 'rgba(200,200,200,0.15)' }
+              }
+            }
+          }
+        });
+      }
+
+      // MAAND CHART
+      const monthCtx = document.getElementById(`tempMonthChart-${material}`);
+      if (monthCtx) {
+        new Chart(monthCtx, {
+          type: 'line',
+          data: {
+            labels: monthLabels,
+            datasets: makeDatasets(monthData)
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { 
+                display: true,
+                position: 'top',
+                labels: {
+                  boxWidth: 12,
+                  padding: 20
+                }
+              },
+              tooltip: {
+                callbacks: {
+                  label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y} °C`
+                }
+              }
+            },
+            scales: {
+              x: {
+                title: { display: true, text: 'Tijd (laatste 30 dagen)', font: { size: 14 } },
+                ticks: { font: { size: 10 }, autoSkip: false, maxRotation: 0, minRotation: 0 },
+                grid: { color: 'rgba(200,200,200,0.15)' }
+              },
+              y: {
+                title: { display: true, text: 'Temperatuur (°C)', font: { size: 14 } },
+                grid: { color: 'rgba(200,200,200,0.15)' }
+              }
+            }
+          }
+        });
+      }
+
+      // JAAR CHART
+      const yearCtx = document.getElementById(`tempYearChart-${material}`);
+      if (yearCtx) {
+        new Chart(yearCtx, {
+          type: 'line',
+          data: {
+            labels: yearLabels,
+            datasets: makeDatasets(yearData)
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { 
+                display: true,
+                position: 'top',
+                labels: {
+                  boxWidth: 12,
+                  padding: 20
+                }
+              },
+              tooltip: {
+                callbacks: {
+                  label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y} °C`
+                }
+              }
+            },
+            scales: {
+              x: {
+                title: { display: true, text: 'Tijd (laatste 365 dagen)', font: { size: 14 } },
+                ticks: { font: { size: 10 }, autoSkip: true, maxRotation: 0, minRotation: 0 },
+                grid: { color: 'rgba(200,200,200,0.15)' }
+              },
+              y: {
+                title: { display: true, text: 'Temperatuur (°C)', font: { size: 14 } },
+                grid: { color: 'rgba(200,200,200,0.15)' }
+              }
+            }
+          }
+        });
+      }
+
+      // 24 UUR CHART
+      const dayCtx = document.getElementById(`temp24hChart-${material}`);
+      if (dayCtx) {
+        new Chart(dayCtx, {
+          type: 'line',
+          data: {
+            labels: dayLabels,
+            datasets: makeDatasets(dayData)
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { 
+                display: true,
+                position: 'top',
+                labels: {
+                  boxWidth: 12,
+                  padding: 20
+                }
+              },
+              tooltip: {
+                callbacks: {
+                  label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y} °C`
+                }
+              }
+            },
+            scales: {
+              x: {
+                title: { display: true, text: 'Tijd (laatste 24 uur)', font: { size: 14 } },
+                ticks: { font: { size: 10 }, autoSkip: false, maxRotation: 0, minRotation: 0 },
+                grid: { color: 'rgba(200,200,200,0.15)' }
+              },
+              y: {
+                title: { display: true, text: 'Temperatuur (°C)', font: { size: 14 } },
+                grid: { color: 'rgba(200,200,200,0.15)' }
+              }
+            }
+          }
+        });
+      }
+    }
+
+    function createRadarChart(canvasId, chartData) {
+      const ctx = document.getElementById(canvasId);
+      if (!ctx) return;
+      
+      new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: chartData.labels,
+          datasets: [{
+            label: 'Score',
+            data: chartData.data,
+            borderWidth: 2,
+            borderColor: chartData.borderColor,
+            backgroundColor: chartData.backgroundColor,
+            pointBackgroundColor: chartData.borderColor,
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: chartData.borderColor,
+            pointRadius: 0,         
+            pointHoverRadius: 0 
+          }]
+        },
+        options: {
+          scales: {
+            r: {
+              angleLines: {
+                display: true,
+                color: 'rgba(60, 60, 60, 0.7)'
+              },
+              grid: {
+                color: 'rgba(60, 60, 60, 0.7)' 
+              },  
+              suggestedMin: 0,
+              suggestedMax: 5,
+              ticks: {
+                stepSize: 1,
+                display: false,
+                backdropColor: 'transparent'
+              },
+              
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label + ': ' + context.raw + '/100';
+                }
+              }
+            }
+          },
+          elements: {
+            line: {
+              tension: 0
+            }
+          },
+          maintainAspectRatio: false,
+          responsive: true
+        }
+      });
+    }
+    
+    function startDashboardCycling() {
+      const dashboards = ['stro', 'isovlas', 'cellulose', 'hemkor'];
+      
+      dashboards.forEach(material => {
+        const dashboard = document.getElementById(`page-${material}`);
+        if (!dashboard) return;
+
+        // Get all section2 elements and filter out the radar chart (page 2)
+        const allPages = Array.from(dashboard.querySelectorAll('.section2'));
+        const pages = allPages.filter((_, index) => index !== 1); // Skip index 1 (page 2)
+        
+        // Adjust timings for 5 pages (since we're skipping one)
+        const timings = [20000, 15000, 15000, 15000, 15000];
+        let current = 0;
+
+        function showPage(index) {
+          allPages.forEach(page => page.style.display = 'none'); // Hide all first
+          if (pages[index]) {
+            pages[index].style.display = ''; // Show current page
+          }
+        }
+
+        function nextPage() {
+          current = (current + 1) % pages.length;
+          showPage(current);
+          setTimeout(nextPage, timings[current]);
+        }
+
+        // Start cycling
+        showPage(0);
+        setTimeout(nextPage, timings[0]);
+      });
+    }
+  </script>
+  
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      const startTime = new Date();
+      const options = { hour: '2-digit', minute: '2-digit'};
+      document.getElementById('start-time').textContent =
+        'Laatste update: ' + startTime.toLocaleTimeString('nl-NL', options);
+    });
+  </script>
+  <script>
+    document.querySelector('.load-btn').addEventListener('click', function() {
+      setTimeout(function() {
+        location.reload();
+      }, 1000);
+    });
+  </script>
+  <script>
+    // Vervang alle N/A spans door een loading gif
+document.querySelectorAll('span').forEach(span => {
+  if (span.textContent.trim() === 'N/A') {
+    span.innerHTML = '<img src="photos/loading.gif" alt="Loading..." style="height:18px;vertical-align:middle;">';
+  }
+});
   </script>
 </body>
 </html>
